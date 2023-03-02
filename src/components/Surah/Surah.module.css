@@ -1,0 +1,51 @@
+  .surah-container {
+  cursor: pointer;
+  width: 100%;
+  margin-inline: auto;
+  margin-block-end: 20px;
+  padding: 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  max-width: 900px;
+  display: grid;
+  text-align: start;
+  border-radius: 15px;
+  border: 1px solid var(--action-pale);
+  grid-template-areas: "order name name numOfAyat revType";
+  grid-template-columns: 10% 1fr 10% 15%;
+}
+.surah-container:hover,
+.surah-container.active {
+  background-color: var(--primary);
+  color: var(--font-secondary);
+}
+
+.order {
+  grid-area: "order";
+  text-align: center;
+}
+.surah-name {
+  grid-area: "name";
+}
+.number-of-verses {
+  grid-area: "numOfAyat";
+}
+.revelation {
+  grid-area: "revType";
+  position: relative;
+  height: 100%;
+}
+.revelation img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  aspect-ratio: 1;
+  border-radius: 100%;
+  height: 40px;
+}
+
+@media (width<600px) {
+  .surah-name {
+    text-align: center;
+  }
+}

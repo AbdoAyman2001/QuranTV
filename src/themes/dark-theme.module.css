@@ -1,0 +1,8 @@
+:root:has(body[theme="dark"]) {
+  --font-color: beige;
+  --action: #fb2576;
+  --action-pale: #150050;
+  --primary: #150050;
+  --base: #000000;
+  --font-secondary: #ec87e4;
+}

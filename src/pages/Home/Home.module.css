@@ -1,0 +1,35 @@
+.search {
+  margin-block-start: 20px;
+}
+
+body {
+  color: var(--font-color);
+  background-color: var(--base);
+}
+
+.search input {
+  background-color: var(--primary);
+  height: 30px;
+  width: 60%;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  padding: 15px;
+  color: var(--action);
+  border: 1px solid var(--action);
+}
+.search input:focus {
+  outline: 1px solid var(--action);
+}
+.search input::placeholder {
+  color: var(--action);
+}
+
+@media (width<600px) {
+  .home-wrapper {
+    width: 100%;
+    margin-inline-end: 0;
+  }
+  .search input {
+    width: 100%;
+  }
+}

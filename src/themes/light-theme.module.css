@@ -1,0 +1,8 @@
+:root:has(body[theme="light"]) {
+  --font-color: #000000;
+  --action: #e6eadc;
+  --action-pale: #a6a8a0;
+  --primary: #1f3727;
+  --base: #738253;
+  --font-secondary: #92b847;
+}

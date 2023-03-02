@@ -1,0 +1,124 @@
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  gap: 10px;
+
+  background-color: var(--base);
+  color: var(--font-color);
+  border: 1px solid var(--action-pale);
+}
+.progress-container.audio {
+  margin-inline-end: auto;
+  width: 40%;
+  height: 50px;
+}
+.whole-bar{
+  background-color: var(--action-pale);
+}
+.active-part,
+.controller { 
+  background-color: var(--action);
+}
+
+
+
+/* .progress-container .current,
+.progress-container .total {
+  color: grey;
+} */
+.progress-container .current {
+  margin-inline-start: 10px;
+}
+.progress-container .total {
+  margin-inline-end: 10px;
+}
+
+.progress {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.progress .whole-bar {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  box-sizing: border-box;
+  border-radius: 1px;
+  cursor: pointer;
+}
+:root {
+  --percentage: 20%;
+}
+.progress .controller {
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.progress-container.audio .controller {
+  right: var(--percentage);
+}
+.progress-container.audio .active-part {
+  width: var(--percentage);
+}
+
+.progress .active-part {
+  height: 4px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.progress-container.volume .progress {
+  max-height: 100%;
+  width: 20px;
+  flex-direction: column;
+}
+
+.progress-container.volume {
+  position: absolute;
+  justify-content: center;
+  flex-direction: column-reverse;
+  height: 200px;
+  bottom: 40px;
+  width: 30px;
+}
+
+.progress-container.volume .whole-bar {
+  height: 100%;
+  width: 4px;
+}
+.progress-container.volume .controller {
+  bottom: var(--percentage);
+}
+.progress-container.volume .active-part {
+  height: calc((var(--percentage)) + 3px);
+  width: 4px;
+  bottom: 0;
+  transform: translateX(-8px);
+  left: 10px;
+}
+
+.progress-container.volume .current,
+.progress-container.volume .total {
+  margin-block: 5px;
+  margin-inline: 0;
+}
+
+@media (width<800px) {
+  .progress-container.audio {
+    width: 90%;
+    margin-inline: auto;
+  }
+}
+
+.progress-container.volume {
+  transform: translateX(-5px);
+}

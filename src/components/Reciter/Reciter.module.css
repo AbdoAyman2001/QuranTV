@@ -1,0 +1,136 @@
+.reciter-container {
+  width: 80%;
+  margin: auto;
+  min-height: 70px;
+  border: 1px solid var(--action-pale);
+  border-radius: 10px;
+  margin-block: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 20px;
+}
+.reciter-container:nth-child(1),
+.reciter-container:nth-child(1):hover {
+  background-color: var(--primary);
+  color: var(--font-secondary);
+}
+.reciter-container:not(:first-child):hover,
+.reciter-container:not(:first-child).active {
+  background-color: var(--primary);
+  color: var(--font-secondary);
+}
+a.telawah,
+.try,
+.number-of-pages {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.telawah {
+  font-size: 1.3rem;
+}
+
+.name {
+  margin-inline-start: 20px;
+  font-size: 1.2rem;
+  position: relative;
+}
+.reciter-container:not(:first-child) .name h3::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  right: 0;
+  height: 1px;
+  bottom: 0;
+}
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-inline-end: 20px;
+  min-width: 300px;
+  width: 60%;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-block: 5px;
+}
+.telawah {
+  margin-inline-end: 20px;
+  text-decoration: none;
+  text-align: right;
+  margin-inline-start: 20px;
+  margin-inline-end: auto;
+}
+.name,
+.number-of-pages {
+  cursor: context-menu;
+}
+.number-of-pages {
+  width: 40px;
+  text-align: center;
+  padding-inline: 5px;
+}
+
+.reciter-container:not(:first-child) .try,
+.reciter-container:not(:first-child) .telawah {
+  text-decoration: underline transparent;
+  transition: text-decoration-color 300ms;
+}
+
+.try {
+  margin-inline-end: 30px;
+  margin-inline-start: auto;
+}
+.reciter-container:not(:first-child) .try,
+.reciter-container:not(:first-child) .telawah {
+  cursor: pointer;
+  color: var(--action);
+}
+
+.reciter-container:not(:first-child) .try:hover,
+.reciter-container:not(:first-child) .telawah:hover {
+  text-decoration: underline 2px var(--action);
+}
+
+@media (width<800px) {
+  .name h3::after {
+    background-color: grey;
+  }
+  .reciter-container {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  .name {
+    margin-block-end: 10px;
+    margin-inline: 0;
+  }
+  .try {
+    margin-inline-end: 20px;
+  }
+
+  .details-wrapper {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+  .details {
+    margin: 0;
+  }
+  .telawah {
+    margin: 0;
+  }
+}
+@media (width<600px) {
+  .details {
+    margin-block-end: 15px;
+  }
+  .name {
+    margin-block-end: 15px;
+  }
+}

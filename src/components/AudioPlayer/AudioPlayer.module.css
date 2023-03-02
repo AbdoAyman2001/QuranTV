@@ -1,0 +1,143 @@
+:root {
+  --mainMargin: 0px;
+}
+
+.audio-container {
+  position: fixed;
+  background-color: var(--primary);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  border-radius: 20px 20px 0 0;
+  color: var(--font-secondary);
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid var(--action-pale);
+  border-bottom: none;
+  gap: 20px;
+  animation: slideUp 1s;
+}
+
+.audio-container::after{ 
+  content: "";
+  position: absolute;
+  bottom:0px ;
+  height: 50px;
+  transform: translateY(50px);
+  background-color: var(--primary);
+  width: 100%;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(110px);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  justify-content: space-evenly;
+}
+.audio-controls button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.audio-controls span {
+  font-size: 1.9rem;
+  border-radius: 50%;
+  padding: 5px;
+  font-weight: bolder;
+}
+
+span {
+  color: var(--action);
+}
+
+span:hover {
+  background-color: var(--action);
+  color: var(--primary);
+}
+
+.reciter {
+  margin-inline-end: 20px;
+  flex-grow: 1;
+  color: var(--font-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 15px;
+  width: 30%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.reciter {
+  font-size: 1.2rem;
+}
+
+.volIcon .volume {
+  animation: slideUp 0.5s;
+  background-color: var(--primary-bg-color);
+}
+.volIcon span {
+  font-size: 1.9rem;
+  border-radius: 50%;
+  cursor: context-menu;
+  padding: 5px;
+  font-weight: bolder;
+}
+/* .volIcon:hover span {
+  background-color: #aaa;
+} */
+.volIcon:hover .volume {
+  display: block;
+}
+
+.volume {
+  position: relative;
+  display: none;
+}
+
+@media (width<800px) {
+  .reciter .recitation {
+    display: none;
+  }
+  .audio-container {
+    flex-direction: column;
+    gap: 0;
+    height: 110px;
+    justify-content: space-evenly;
+  }
+  .reciter {
+    display: none;
+  }
+  .audio-controls {
+    width: 90%;
+    justify-content: space-evenly;
+  }
+  .volIcon {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+  }
+}
+
+main {
+  margin-block-end: var(--mainMargin);
+}

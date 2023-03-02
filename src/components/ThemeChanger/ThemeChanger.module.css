@@ -1,0 +1,70 @@
+* {
+  transition: background-color 0.3s;
+}
+.themes {
+  transform: translateX(-100%);
+  position: absolute;
+  inset-block-end: -40px;
+  inset-inline-end: 0px;
+  background-color: var(--action);
+  background-color: white;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+.themes:hover { 
+    transform: translateX(0);
+}
+legend.visually-hidden {
+  text-indent: 100%;
+  border-radius: 0 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 20px;
+  height: 100%;
+  top: 0;
+  right: -20px;
+  background-color: white;
+  position: absolute;
+}
+legend.visually-hidden::after{
+    position: absolute;
+    text-indent: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "<";
+    font-size: 1.3rem;
+    font-weight: bolder;
+    inset: 0;
+    color: var(--primary);
+}
+.themes:hover legend::after { 
+    content: ">";
+}
+.visually-hidden:not(legend) {
+  display: none;
+}
+fieldset {
+  display: flex;
+  gap: 15px;
+  border: none;
+}
+
+input {
+  appearance: none;
+  border-radius: 50%;
+  width: 20px;
+  background-color: transparent;
+  height: 20px;
+  outline: 3px solid var(--radio-color, currentColor);
+  outline-offset: 2px;
+}
+input:checked {
+  background-color: var(--radio-color);
+}
+input.light {
+  --radio-color: #1f3727;
+}
+input.dark {
+  --radio-color: #000000;
+}
