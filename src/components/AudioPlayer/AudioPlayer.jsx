@@ -77,19 +77,17 @@ const AudioPlayer = () => {
       setPlaying(false);
       if (pathname === "/") {
         dispatch(playDirectionalReciter({ direction: "next" }));
-        // console.log("home");
-      } else if(pathname.startsWith("/surahs")){
+      } else if (pathname.startsWith("/surahs")) {
         dispatch(playDirectionalSurah({ direction: "next" }));
-        // console.log("surahs");
       }
     };
     if (audioRef?.current) audioRef.current.addEventListener("ended", listener);
-    
+
     return () => {
       if (audioRef.current)
         audioRef?.current.removeEventListener("ended", listener);
     };
-  }, [audioRef?.current?.ended,pathname]);
+  }, [audioRef?.current?.ended, pathname]);
 
   useEffect(() => {
     playing ? audioRef.current.play() : audioRef.current.pause();

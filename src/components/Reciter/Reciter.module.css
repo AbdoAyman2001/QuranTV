@@ -21,21 +21,20 @@
   color: var(--font-secondary);
 }
 a.telawah,
-.try,
-.number-of-pages {
-  font-size: 1.2rem;
+.try {
+  font-size: 1.3rem;
   font-weight: bold;
 }
-
-.telawah {
-  font-size: 1.3rem;
+.number-of-pages,
+.name h3 {
+  font-size: 1.1rem;
+  font-weight: normal;
 }
-
 .name {
   margin-inline-start: 20px;
-  font-size: 1.2rem;
   position: relative;
 }
+
 .reciter-container:not(:first-child) .name h3::after {
   content: "";
   position: absolute;

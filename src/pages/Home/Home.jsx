@@ -41,7 +41,7 @@ const Home = () => {
       <div className={classes.search}>
         <input
           type="text"
-          placeholder="إبحث هنا"
+          placeholder="إبحث هنا عن القارئ"
           onChange={handleSearchChange}
         />
       </div>

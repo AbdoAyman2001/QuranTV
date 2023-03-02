@@ -1,14 +1,15 @@
 import classes from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import ThemeChanger from "../ThemeChanger/ThemeChanger";
 
 const Header = () => {
   const icon = useRef();
   const linksWrapper = useRef();
+  const navigate = useNavigate();
 
   const [isListShown, SetIsListShown] = useState(false);
-  
+
   useEffect(() => {
     const menuBars = document.querySelectorAll(`.${classes.bar}`);
     const listener = (e) => {
@@ -30,10 +31,16 @@ const Header = () => {
     SetIsListShown(false);
   };
 
+  const onLogoClicked = () => {
+    navigate("/");
+  };
+
   return (
     <header>
       <nav className={classes.nav}>
-        <div className={classes.logo}>QuranTv</div>
+        <div className={classes.logo} onClick={onLogoClicked}>
+          QuranTv
+        </div>
         <div
           ref={icon}
           className={`${classes.icon} ${isListShown ? classes.active : ""}`}
@@ -115,7 +122,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <ThemeChanger/>
+        <ThemeChanger />
       </nav>
     </header>
   );

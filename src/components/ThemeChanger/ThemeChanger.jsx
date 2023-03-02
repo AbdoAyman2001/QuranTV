@@ -4,9 +4,20 @@ import lightTheme from "../../themes/light-theme.module.css";
 import darkTheme from "../../themes/dark-theme.module.css";
 
 const ThemeChanger = () => {
-  const [theme, setTheme] = useState("light");
+  const currentTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(() => (currentTheme ? currentTheme : ""));
   const lightRadioRef = useRef();
   const darkRadioRef = useRef();
+
+  useEffect(() => {
+    // const currentTheme = localStorage.getItem("theme");
+    if (currentTheme) {
+      setTheme(currentTheme);
+    } else {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+    }
+  }, []);
 
   useEffect(() => {
     document.body.setAttribute("theme", theme);
@@ -16,8 +27,10 @@ const ThemeChanger = () => {
     switch (e.target) {
       case lightRadioRef.current:
         setTheme("light");
+        localStorage.setItem("theme", "light");
         break;
       case darkRadioRef.current:
+        localStorage.setItem("theme", "dark");
         setTheme("dark");
         break;
     }
@@ -39,8 +52,7 @@ const ThemeChanger = () => {
             name="theme"
             id="light"
             className={classes.light}
-            
-            defaultChecked={theme === "light"}
+            checked={theme === "light"}
           />
           <label htmlFor="dark" className={classes["visually-hidden"]}>
             Dark mode
@@ -50,7 +62,7 @@ const ThemeChanger = () => {
             type="radio"
             name="theme"
             id="dark"
-            defaultChecked={theme === "dark"}
+            checked={theme === "dark"}
             className={classes.dark}
           />
         </fieldset>
