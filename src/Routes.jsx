@@ -12,7 +12,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Surahs from "./pages/Surahs/Surahs";
 const routerDef = createRoutesFromElements(
-  <Route path="/" element={<Root />}>
+  <Route path="/" element={<Root />} errorElement={<Error/>}>
     <Route index={true} element={<Home />} />
     <Route path={"/surahs"} element={<Surahs />} />
     <Route path={"/surahs/:reciterId/:moshafId"} element={<Quran />} />
