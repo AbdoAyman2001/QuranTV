@@ -27,7 +27,7 @@ const ThemeChanger = () => {
     <>
       <form className={classes.themes} action="" onClick={onChangeChoice}>
         <fieldset>
-          <legend className={classes["visually-hidden"]} >
+          <legend className={classes["visually-hidden"]}>
             choose your theme
           </legend>
           <label htmlFor="light" className={classes["visually-hidden"]}>
@@ -39,7 +39,8 @@ const ThemeChanger = () => {
             name="theme"
             id="light"
             className={classes.light}
-            checked={theme === "light"}
+            
+            defaultChecked={theme === "light"}
           />
           <label htmlFor="dark" className={classes["visually-hidden"]}>
             Dark mode
@@ -49,7 +50,7 @@ const ThemeChanger = () => {
             type="radio"
             name="theme"
             id="dark"
-            checked={theme === "dark"}
+            defaultChecked={theme === "dark"}
             className={classes.dark}
           />
         </fieldset>

@@ -77,10 +77,10 @@ const AudioPlayer = () => {
       setPlaying(false);
       if (pathname === "/") {
         dispatch(playDirectionalReciter({ direction: "next" }));
-        console.log("home");
+        // console.log("home");
       } else if(pathname.startsWith("/surahs")){
         dispatch(playDirectionalSurah({ direction: "next" }));
-        console.log("surahs");
+        // console.log("surahs");
       }
     };
     if (audioRef?.current) audioRef.current.addEventListener("ended", listener);

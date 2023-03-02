@@ -9,7 +9,7 @@ import { useGetSurahsQuery } from "../../features/surahsApi";
 
 const Home = () => {
   const { data, error, isLoading } = useGetRecitersQuery();
-  useGetSurahsQuery();
+  // useGetSurahsQuery();
   const readingReciterName = useSelector(
     (state) => state.audio.playingSurah.reciterName
   );

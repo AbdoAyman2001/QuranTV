@@ -1,9 +1,10 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 import { audioApi } from "./audioApi";
 import { surahsApi } from "./surahsApi";
+import surahs from "./surahs";
 
 const initialState = {
-  surahs: [],
+  surahs,
   reciters: [],
   playingSurah: {
     src: "",
@@ -76,7 +77,7 @@ const audioSlice = createSlice({
       const currentSurah = telawah.surah_src.find(
         (surah) => Object.values(surah)[0] === state.playingSurah.src
       );
-      
+
       const currentSurahNumber = +Object.keys(currentSurah)[0];
 
       const nextSurah = telawah.surah_src.find((surah) => {
@@ -123,12 +124,12 @@ const audioSlice = createSlice({
         state.reciters = payload;
       }
     );
-    builder.addMatcher(
-      surahsApi.endpoints.getSurahs.matchFulfilled,
-      (state, { payload }) => {
-        state.surahs = payload.data;
-      }
-    );
+    // builder.addMatcher(
+    //   surahsApi.endpoints.getSurahs.matchFulfilled,
+    //   (state, { payload }) => {
+    //     state.surahs = payload.data;
+    //   }
+    // );
   },
 });
 

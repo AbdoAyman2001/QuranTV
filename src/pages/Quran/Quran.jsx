@@ -8,7 +8,7 @@ import classes from "./Quran.module.css";
 
 const Quran = () => {
   useGetRecitersQuery();
-  useGetSurahsQuery();
+  // useGetSurahsQuery();
   const reciters = useSelector((state) => state.audio.reciters);
   const { moshafId, reciterId } = useParams();
   const [reciter, setReciter] = useState();

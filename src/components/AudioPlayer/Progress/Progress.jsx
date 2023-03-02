@@ -76,7 +76,7 @@ const Progress = ({ current, end, onSeek, type }) => {
     } else if (type === "volume") {
       const progressBarRect = progressBarRef.current.getBoundingClientRect();
       const newAudioLevel = BubbleX / progressBarRect.height;
-      console.log(newAudioLevel);
+      // console.log(newAudioLevel);
       onSeek(newAudioLevel);
     }
   };
