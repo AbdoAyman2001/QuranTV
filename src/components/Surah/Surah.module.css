@@ -48,4 +48,7 @@
   .surah-name {
     text-align: center;
   }
+  .surah-container { 
+    width: 95%;
+  }
 }

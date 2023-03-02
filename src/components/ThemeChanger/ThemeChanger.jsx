@@ -10,7 +10,6 @@ const ThemeChanger = () => {
   const darkRadioRef = useRef();
 
   useEffect(() => {
-    // const currentTheme = localStorage.getItem("theme");
     if (currentTheme) {
       setTheme(currentTheme);
     } else {
