@@ -1,135 +1,101 @@
 .reciter-container {
   width: 80%;
   margin: auto;
-  min-height: 70px;
-  border: 1px solid var(--action-pale);
-  border-radius: 10px;
-  margin-block: 20px;
-  display: flex;
+  margin-block: 10px;
+  border: 1px solid var(--action);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: calc(100% / 3) auto;
+  grid-template-areas: "name detailsWrapper";
   align-items: center;
-  justify-content: space-between;
-  padding-block: 20px;
-}
-.reciter-container:nth-child(1),
-.reciter-container:nth-child(1):hover {
-  background-color: var(--primary);
-  color: var(--font-secondary);
-}
-.reciter-container:not(:first-child):hover,
-.reciter-container:not(:first-child).active {
-  background-color: var(--primary);
-  color: var(--font-secondary);
-}
-a.telawah,
-.try {
   font-size: 1.3rem;
-  font-weight: bold;
+  text-align: start;
+  padding: 30px;
+  color: var(--font-color);
+  cursor: default;
 }
-.number-of-pages,
-.name h3 {
-  font-size: 1.1rem;
-  font-weight: normal;
+.reciter-container:first-child {
+  color: var(--font-secondary);
+  background-color: var(--primary);
 }
 .name {
-  margin-inline-start: 20px;
-  position: relative;
-}
-
-.reciter-container:not(:first-child) .name h3::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  right: 0;
-  height: 1px;
-  bottom: 0;
+  grid-area: name;
+  font-weight: bold;
 }
 .details-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-inline-end: 20px;
-  min-width: 300px;
-  width: 60%;
+  gap: 10px;
+  display: grid;
+  grid-area: detailsWrapper;
 }
 .details {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto repeat(2, 15%);
   align-items: center;
-  font-size: 1.2rem;
-  margin-block: 5px;
+  grid-template-areas: "telawah try listen";
+}
+.number-of-pages {
+  grid-area: listen;
+  text-decoration: none;
+}
+.try {
+  grid-area: try;
 }
 .telawah {
-  margin-inline-end: 20px;
-  text-decoration: none;
-  text-align: right;
-  margin-inline-start: 20px;
-  margin-inline-end: auto;
+  grid-area: telawah;
 }
-.name,
+.try,
 .number-of-pages {
-  cursor: context-menu;
-}
-.number-of-pages {
-  width: 40px;
   text-align: center;
-  padding-inline: 5px;
-}
-
-.reciter-container:not(:first-child) .try,
-.reciter-container:not(:first-child) .telawah {
-  text-decoration: underline transparent;
-  transition: text-decoration-color 300ms;
-}
-
-.try {
-  margin-inline-end: 30px;
-  margin-inline-start: auto;
 }
 .reciter-container:not(:first-child) .try,
-.reciter-container:not(:first-child) .telawah {
+.reciter-container:not(:first-child) .number-of-pages {
+  background-color: var(--action);
+  color: var(--primary);
+  padding-block: 10px;
+  border-radius: 15px;
+  border: 1px solid var(--action);
   cursor: pointer;
+}
+.reciter-container:not(:first-child) .try:hover,
+.reciter-container:not(:first-child) .number-of-pages:hover {
+  background-color: var(--primary);
   color: var(--action);
 }
 
-.reciter-container:not(:first-child) .try:hover,
-.reciter-container:not(:first-child) .telawah:hover {
-  text-decoration: underline 2px var(--action);
+@media (width<1000px) {
+  .reciter-container {
+    width: 95%;
+  }
 }
 
-@media (width<800px) {
-  .name h3::after {
-    background-color: grey;
-  }
+@media (width < 800px) {
   .reciter-container {
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-  .name {
-    margin-block-end: 10px;
-    margin-inline: 0;
-  }
-  .try {
-    margin-inline-end: 20px;
-  }
-
-  .details-wrapper {
-    width: 90%;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "name"
+      "detailsWrapper";
   }
   .details {
-    margin: 0;
+    position: relative;
+    width: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "telawah telawah telawah telawah telawah telawah" ". . try listen . .";
+  }
+  .details::after {
+    content: "";
+    position: absolute;
+    inset-block-end: -10px;
+    height: 1px;
+    inset-inline: 25%;
+    background-color: var(--action);
+  }
+  .details:last-child:after {
+    background-color: transparent;
   }
   .telawah {
-    margin: 0;
-  }
-}
-@media (width<600px) {
-  .details {
-    margin-block-end: 15px;
-  }
-  .name {
-    margin-block-end: 15px;
+    text-align: center;
   }
 }

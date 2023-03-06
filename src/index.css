@@ -10,7 +10,7 @@ main {
   text-align: center;
 }
 
-@media (width<600px) {
+@media (width<1000px) {
   main {
     width: 100%;
     margin-inline: 0;

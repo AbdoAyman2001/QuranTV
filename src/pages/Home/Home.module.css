@@ -20,6 +20,7 @@ body {
 }
 .search input:focus {
   outline: 1px solid var(--action);
+  outline-offset: 0;
 }
 .search input::placeholder {
   color: var(--action);
@@ -29,7 +30,7 @@ body {
 @media (width<600px) {
   .home-wrapper {
     width: 95%;
-    margin-inline:  auto;
+    margin-inline: auto;
   }
   .search input {
     width: 95%;

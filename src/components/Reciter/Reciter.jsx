@@ -27,9 +27,7 @@ const Reciter = ({ reciter, index, active }) => {
           <div className={classes["details-wrapper"]}>
             <div className={classes.details}>
               <h3 className={classes.telawah}>التلاوة المتاحة</h3>
-              <div className={classes.try} >
-                جرب
-              </div>
+              <div className={classes.try}>جرب</div>
               <div className={classes["number-of-pages"]}>عدد السور</div>
             </div>
           </div>
@@ -49,21 +47,19 @@ const Reciter = ({ reciter, index, active }) => {
           <div className={classes["details-wrapper"]}>
             {reciter.moshaf.map((moshaf, index) => (
               <div className={classes.details} key={moshaf.id}>
-                <Link
-                  to={`/surahs/${reciter.id}/${moshaf.id}`}
-                  className={classes.telawah}
-                >
-                  {moshaf.name}
-                </Link>
+                <div className={classes.telawah}>{moshaf.name}</div>
                 <div
                   className={classes.try}
                   onClick={() => onTryHandler(moshaf, reciter.name, index)}
                 >
                   جرب
                 </div>
-                <div className={classes["number-of-pages"]}>
+                <Link
+                  className={classes["number-of-pages"]}
+                  to={`/surahs/${reciter.id}/${moshaf.id}`}
+                >
                   {moshaf.surah_total === 114 ? "كاملة" : moshaf.surah_total}
-                </div>
+                </Link>
               </div>
             ))}
           </div>
