@@ -8,6 +8,7 @@ const ThemeChanger = () => {
   const [theme, setTheme] = useState(() => (currentTheme ? currentTheme : ""));
   const lightRadioRef = useRef();
   const darkRadioRef = useRef();
+  const [themesShown, setThemesShown] = useState(false);
 
   useEffect(() => {
     if (currentTheme) {
@@ -35,11 +36,22 @@ const ThemeChanger = () => {
     }
   };
 
+  const onToggleHandler = () => {
+    setThemesShown((prev) => !prev);
+  };
+
   return (
     <>
-      <form className={classes.themes} action="" onClick={onChangeChoice}>
+      <form
+        className={`${classes.themes} ${themesShown ? classes.shown : ""}`}
+        action=""
+        onClick={onChangeChoice}
+      >
         <fieldset>
-          <legend className={classes["visually-hidden"]}>
+          <legend
+            className={classes["visually-hidden"]}
+            onClick={onToggleHandler}
+          >
             choose your theme
           </legend>
           <label htmlFor="light" className={classes["visually-hidden"]}>

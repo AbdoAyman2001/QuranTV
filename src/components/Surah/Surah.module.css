@@ -1,6 +1,7 @@
-  .surah-container {
+.surah-container {
   cursor: pointer;
   width: 100%;
+  gap: 10px;
   margin-inline: auto;
   margin-block-end: 20px;
   padding: 20px;
@@ -14,10 +15,17 @@
   grid-template-areas: "order name name numOfAyat revType";
   grid-template-columns: 10% 1fr 10% 15%;
 }
-.surah-container:hover,
+
 .surah-container.active {
   background-color: var(--primary);
   color: var(--font-secondary);
+}
+
+@media (hover: hover) {
+  .surah-container:hover {
+    background-color: var(--primary);
+    color: var(--font-secondary);
+  }
 }
 
 .order {
@@ -29,6 +37,7 @@
 }
 .number-of-verses {
   grid-area: "numOfAyat";
+  width: fit-content;
 }
 .revelation {
   grid-area: "revType";
@@ -48,7 +57,7 @@
   .surah-name {
     text-align: center;
   }
-  .surah-container { 
+  .surah-container {
     width: 95%;
   }
 }

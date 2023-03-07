@@ -143,6 +143,7 @@ const AudioPlayer = () => {
           {audioRef?.current?.volume < 0.01 && (
             <span className="material-symbols-outlined">volume_off</span>
           )}
+          
           <div className={classes.volume}>
             <Progress
               type={"volume"}

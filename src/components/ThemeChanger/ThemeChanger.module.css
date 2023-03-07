@@ -11,9 +11,25 @@
   padding: 10px 15px;
   transition: 0.3s;
 }
-.themes:hover {
-  transform: translateX(0);
+
+@media (hover: hover) {
+  .themes:hover {
+    transform: translateX(0);
+  }
+  .themes:hover legend::after {
+    content: "navigate_before";
+  }
 }
+
+@media (hover: none) {
+  .themes.shown {
+    transform: translateX(0);
+  }
+  .themes.shown legend::after {
+    content: "navigate_before";
+  }
+}
+
 legend.visually-hidden {
   text-indent: 100%;
   border-radius: 0 0 10px;
@@ -32,14 +48,12 @@ legend.visually-hidden::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  content: "<";
+  font-family: "Material Symbols Outlined";
+  content: "navigate_next";
   font-size: 1.3rem;
   font-weight: bolder;
   inset: 0;
   color: var(--primary);
-}
-.themes:hover legend::after {
-  content: ">";
 }
 .visually-hidden:not(legend) {
   display: none;
