@@ -1,5 +1,5 @@
 :root:has(body[theme="light"]) {
-  --font-color: black;
+  --font-color: #935d27;
   --action: #ffbf76;
   --action-pale: #935d27;
   --primary: #935d27;

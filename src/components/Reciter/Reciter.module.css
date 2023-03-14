@@ -1,4 +1,5 @@
 .reciter-container {
+  position: relative;
   width: 80%;
   margin: auto;
   margin-block: 10px;
@@ -11,6 +12,7 @@
   font-size: 1.3rem;
   text-align: start;
   padding: 30px;
+  padding-inline-start: 45px;
   color: var(--font-color);
   cursor: default;
 }
@@ -19,12 +21,17 @@
   color: var(--font-secondary);
   background-color: var(--primary);
 }
-.name {
+.reciter-container:not(:first-child) .name {
   grid-area: name;
   font-weight: bold;
+  color: var(--font-color);
+}
+.reciter-container:not(:first-child).active .name, 
+.reciter-container:not(:first-child).active .favourite span {
+  color: var(--font-secondary);
 }
 .details-wrapper {
-  gap: 10px;
+  gap: 15px;
   display: grid;
   grid-area: detailsWrapper;
 }
@@ -65,6 +72,20 @@
   color: var(--action);
 }
 
+.favourite {
+  position: absolute;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inset-inline-start: 10.5px;
+  z-index: 10;
+  cursor: pointer;
+}
+.favourite span {
+  color: var(--font-color);
+  width: 24px;
+  font-size: 24px;
+}
+
 @media (width<1000px) {
   .reciter-container {
     width: 100%;
@@ -72,6 +93,11 @@
 }
 
 @media (width < 600px) {
+  .favourite{ 
+    inset-block-start: 10px;
+    inset-inline-start: 10px;
+    transform: none;
+  }
   .name {
     text-align: center;
   }
@@ -82,7 +108,7 @@
     padding: 10px 20px;
     grid-template-columns: repeat(1, auto);
     grid-template-rows: repeat(2, auto);
-    gap: 15px;
+    gap: 20px;
     grid-template-areas:
       "name"
       "detailsWrapper";
@@ -92,7 +118,7 @@
     width: 100%;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 10px;
+    gap: 5px;
     grid-template-areas:
       "telawah telawah telawah telawah telawah telawah"
       ". . try listen . .";
@@ -103,7 +129,7 @@
     inset-block-end: -10px;
     height: 1px;
     inset-inline: 25%;
-    background-color: var(--action);
+    /* background-color: var(--action); */
   }
   .details:last-child:after {
     background-color: transparent;

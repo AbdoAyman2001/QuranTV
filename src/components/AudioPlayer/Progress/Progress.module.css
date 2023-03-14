@@ -15,11 +15,11 @@
   height: 50px;
 }
 .whole-bar{
-  background-color: var(--action-pale);
+  background-color: var(--action);
 }
 .active-part,
 .controller { 
-  background-color: var(--action);
+  background-color: var(--action-pale);
 }
 
 

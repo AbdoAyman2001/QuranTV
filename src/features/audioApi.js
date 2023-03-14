@@ -33,12 +33,17 @@ export const audioApi = createApi({
               telawah.surah_src.push(surahSrcObj);
             });
             Reciter.moshaf = moshaf;
+            Reciter.isFav = Boolean(localStorage.getItem(Reciter.id));
           });
+        });
+        reciters.sort((a, b) => {
+          if (a.isFav === false && b.false === true) return 1;
+          else if (a.isFav === true && b.isFav === false) return -1;
+          else if (a.isFav === b.isFav) return 0;
         });
         return reciters;
       },
     }),
-
   }),
 });
 

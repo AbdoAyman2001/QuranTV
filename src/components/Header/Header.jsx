@@ -70,12 +70,12 @@ const Header = () => {
             </li>
             <li className={classes.link}>
               <NavLink
-                to={"/surahs"}
+                to={"/reciters"}
                 className={({ isActive }) =>
                   isActive ? classes.active : undefined
                 }
               >
-                السور
+                القراء
               </NavLink>
             </li>
             <li className={classes.link}>

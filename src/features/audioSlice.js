@@ -3,6 +3,15 @@ import { audioApi } from "./audioApi";
 import { surahsApi } from "./surahsApi";
 import surahs from "./surahs";
 
+const sortReciter = (recitersArr) => {
+  recitersArr.sort((a, b) => {
+    if (a.isFav === false && b.false === true) return 1;
+    else if (a.isFav === true && b.isFav === false) return -1;
+    else if (a.isFav === b.isFav) return 0;
+  });
+  return recitersArr;
+};
+
 const initialState = {
   surahs,
   reciters: [],
@@ -116,6 +125,22 @@ const audioSlice = createSlice({
       state.playingSurah.recitation = telawah.name;
       state.playingSurah.reciterName = reciter.name;
     },
+    addReciterToFavourite: (state, { payload }) => {
+      const reciter = state.reciters.find(
+        (reciter) => reciter.id === payload.reciterId
+      );
+      reciter.isFav = true;
+      localStorage.setItem(payload.reciterId, payload.reciterId);
+      state.reciters = sortReciter(state.reciters);
+    },
+    removeReciterFromFavourite: (state, { payload }) => {
+      const reciter = state.reciters.find(
+        (reciter) => reciter.id === payload.reciterId
+      );
+      localStorage.removeItem(payload.reciterId);
+      reciter.isFav = false;
+      state.reciters = sortReciter(state.reciters);
+    },
   },
   extraReducers: (builder) => {
     builder.addMatcher(
@@ -124,12 +149,6 @@ const audioSlice = createSlice({
         state.reciters = payload;
       }
     );
-    // builder.addMatcher(
-    //   surahsApi.endpoints.getSurahs.matchFulfilled,
-    //   (state, { payload }) => {
-    //     state.surahs = payload.data;
-    //   }
-    // );
   },
 });
 
@@ -140,6 +159,8 @@ export const {
   playDirectionalSurah,
   playPrevSurah,
   playSpecificSurah,
+  addReciterToFavourite,
+  removeReciterFromFavourite,
 } = audioSlice.actions;
 const audioReducer = audioSlice.reducer;
 export default audioReducer;

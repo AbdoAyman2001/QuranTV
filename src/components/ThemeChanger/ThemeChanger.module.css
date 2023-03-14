@@ -48,7 +48,7 @@ legend.visually-hidden::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Material Symbols Outlined";
+  font-family: "Material Icons";
   content: "navigate_next";
   font-size: 1.3rem;
   font-weight: bolder;

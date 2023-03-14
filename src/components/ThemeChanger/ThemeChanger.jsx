@@ -62,6 +62,7 @@ const ThemeChanger = () => {
             type="radio"
             name="theme"
             id="light"
+            onChange={() => {}}
             className={classes.light}
             checked={theme === "light"}
           />
@@ -73,6 +74,7 @@ const ThemeChanger = () => {
             type="radio"
             name="theme"
             id="dark"
+            onChange={() => {}}
             checked={theme === "dark"}
             className={classes.dark}
           />

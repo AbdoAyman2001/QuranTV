@@ -111,17 +111,17 @@ const AudioPlayer = () => {
         <audio id="audioPlayback" ref={audioRef} src={src ? src : ""}></audio>
         <div className={classes["audio-controls"]}>
           <button disabled={!controlsDisabled} onClick={onPlayNext}>
-            <span className="material-symbols-outlined">skip_next</span>
+            <span className="material-icons">skip_next</span>
           </button>
           <button onClick={handleToggleAudio} disabled={!controlsDisabled}>
             {playing ? (
-              <span className="material-symbols-outlined">pause</span>
+              <span className="material-icons">pause</span>
             ) : (
-              <span className="material-symbols-outlined">resume</span>
+              <span className="material-icons">play_arrow</span>
             )}
           </button>
           <button disabled={!controlsDisabled} onClick={onPlayPrevious}>
-            <span className="material-symbols-outlined">skip_previous</span>
+            <span className="material-icons">skip_previous</span>
           </button>
         </div>
         <Progress
@@ -134,16 +134,16 @@ const AudioPlayer = () => {
         />
         <div className={classes.volIcon}>
           {audioRef?.current?.volume > 0.5 && (
-            <span className="material-symbols-outlined">volume_up</span>
+            <span className="material-icons">volume_up</span>
           )}
           {audioRef?.current?.volume <= 0.5 &&
             audioRef?.current?.volume >= 0.01 && (
-              <span className="material-symbols-outlined">volume_down_alt</span>
+              <span className="material-icons">volume_down_alt</span>
             )}
           {audioRef?.current?.volume < 0.01 && (
-            <span className="material-symbols-outlined">volume_off</span>
+            <span className="material-icons">volume_off</span>
           )}
-          
+
           <div className={classes.volume}>
             <Progress
               type={"volume"}

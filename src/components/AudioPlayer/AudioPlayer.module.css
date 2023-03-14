@@ -22,10 +22,10 @@
   animation: slideUp 1s;
 }
 
-.audio-container::after{ 
+.audio-container::after {
   content: "";
   position: absolute;
-  bottom:0px ;
+  bottom: 0px;
   height: 50px;
   transform: translateY(50px);
   background-color: var(--primary);
@@ -64,11 +64,11 @@
   font-weight: bolder;
 }
 
-span {
+.audio-controls span {
   color: var(--action);
 }
 
-span:hover {
+.audio-controls span:hover {
   background-color: var(--action);
   color: var(--primary);
 }
