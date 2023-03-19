@@ -39,7 +39,7 @@ const Header = () => {
     <header>
       <nav className={classes.nav}>
         <div className={classes.logo} onClick={onLogoClicked}>
-          QuranTv
+        تَدَبَّرْ
         </div>
         <div
           ref={icon}
