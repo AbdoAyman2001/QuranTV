@@ -39,11 +39,12 @@ legend.visually-hidden {
   height: 100%;
   top: 0;
   right: -20px;
-  background-color: white;
+  background-color: var(--primary);
   position: absolute;
 }
 legend.visually-hidden::after {
   position: absolute;
+  color: var(--action);
   text-indent: 0;
   display: flex;
   justify-content: center;
@@ -53,7 +54,6 @@ legend.visually-hidden::after {
   font-size: 1.3rem;
   font-weight: bolder;
   inset: 0;
-  color: var(--primary);
 }
 .visually-hidden:not(legend) {
   display: none;

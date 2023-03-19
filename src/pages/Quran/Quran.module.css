@@ -1,10 +1,10 @@
-.reciter-name{
-    margin: 20px;
+.reciter-name {
+  margin: 20px;
 }
 
-.surahs-container { 
-    margin-block:20px ;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.surahs-container {
+  margin-block: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

@@ -1,4 +1,15 @@
+@font-face {
+  font-family: "merdani";
+  src: url("./assets/ukij-merdane.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "thulth";
+  src: url("./assets/decotype-thuluth-ii.ttf") format("truetype");
+}
+
 * {
+  font-family: 'merdani', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
