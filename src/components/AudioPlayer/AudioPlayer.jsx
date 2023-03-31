@@ -24,13 +24,13 @@ const AudioPlayer = () => {
   const onPlayNext = () => {
     if (pathname === "/")
       dispatch(playDirectionalReciter({ direction: "next" }));
-    else if (pathname.startsWith("/surah"))
+    else if (pathname.startsWith("/reciters"))
       dispatch(playDirectionalSurah({ direction: "next" }));
   };
   const onPlayPrevious = () => {
-    if (pathname === "/")
+  if (pathname === "/")
       dispatch(playDirectionalReciter({ direction: "previous" }));
-    else if (pathname.startsWith("/surah"))
+    else if (pathname.startsWith("/reciters"))
       dispatch(playDirectionalSurah({ direction: "previous" }));
   };
 

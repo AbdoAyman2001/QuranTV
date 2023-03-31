@@ -59,13 +59,26 @@
   color: var(--action);
 }
 
+:root:has(body[theme="dark"]) .visuals {
+  position: relative;
+}
+:root:has(body[theme="dark"]) .visuals::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 10;
+}
+
 @media (width<600px) {
   .hero .container {
     align-items: flex-start;
     position: relative;
   }
   .visuals {
-    position: absolute;
+    position: absolute !important;
     z-index: -1;
     bottom: 0;
     transform: translateY(50%);

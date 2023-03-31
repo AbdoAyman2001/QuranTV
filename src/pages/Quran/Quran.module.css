@@ -1,6 +1,10 @@
 .reciter-name {
   margin: 20px;
 }
+.container {
+  height: calc(100dvh - 60px);
+  margin-block-start: 80px;
+}
 
 .surahs-container {
   margin-block: 20px;

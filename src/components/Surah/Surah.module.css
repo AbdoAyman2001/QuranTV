@@ -38,6 +38,11 @@
   grid-area: "numOfAyat";
   width: fit-content;
 }
+.order,
+.number-of-verses {
+  display: flex;
+  align-items: center;
+}
 .revelation {
   grid-area: "revType";
   position: relative;

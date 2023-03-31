@@ -26,7 +26,7 @@ const Quran = () => {
   return (
     <>
       {reciter && (
-        <>
+        <div className={classes.container}>
           <h2 className={classes["reciter-name"]}>{reciter.name}</h2>
           <h2 className={classes.rewayah}>{moshaf.name}</h2>
           <div className={classes["surahs-container"]}>
@@ -39,7 +39,7 @@ const Quran = () => {
               />
             ))}
           </div>
-        </>
+        </div>
       )}
     </>
   );

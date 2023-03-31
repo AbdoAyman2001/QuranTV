@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { useLocation, useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import classes from "./Home.module.css";
 import quran from "../../assets/vector.jpg";
+// import quranDark from "../../assets/vector.jpg";
 
 const Home = () => {
   const navigate = useNavigate();

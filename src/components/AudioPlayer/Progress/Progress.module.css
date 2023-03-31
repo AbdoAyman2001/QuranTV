@@ -42,6 +42,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  z-index: 12;
 }
 .progress .whole-bar {
   position: absolute;
@@ -50,6 +51,7 @@
   box-sizing: border-box;
   border-radius: 1px;
   cursor: pointer;
+  z-index: 12;
 }
 :root {
   --percentage: 20%;
@@ -57,6 +59,7 @@
 .progress .controller {
   position: absolute;
   height: 6px;
+  z-index: 12;
   width: 6px;
   border-radius: 100%;
   cursor: pointer;
@@ -72,6 +75,7 @@
 .progress .active-part {
   height: 4px;
   position: absolute;
+  z-index: 12;
   right: 0;
   cursor: pointer;
 }
@@ -84,6 +88,7 @@
 
 .progress-container.volume {
   position: absolute;
+  z-index: 12;
   justify-content: center;
   flex-direction: column-reverse;
   height: 200px;
